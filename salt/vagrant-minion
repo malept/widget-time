@@ -1,0 +1,8 @@
+# vim: set ft=sls ts=2 sts=2 sw=2 :
+file_client: local
+file_roots:
+  base:
+    - /srv/salt
+grains:
+  node_type: vagrant
+  username: vagrant
