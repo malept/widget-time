@@ -1,0 +1,4 @@
+[submodule "salt/formulae/nginx-formula"]
+	path = salt/formulae/nginx-formula
+	url = https://github.com/tfolio/nginx-formula.git
+	branch = tfolio

@@ -3,6 +3,7 @@ file_client: local
 file_roots:
   base:
     - /srv/salt
+    - /srv/salt-formulae/nginx-formula
 grains:
   node_type: vagrant
   username: vagrant

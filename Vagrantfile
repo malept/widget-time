@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "salt/pillar/", "/srv/pillar/"
 
   ## Forward the web server port
-  config.vm.network 'forwarded_port', guest: 8080, host: 9080
+  config.vm.network 'forwarded_port', guest: 80, host: 9080
   config.vm.network 'forwarded_port', guest: 8081, host: 9081
 
   ## Provision with salt

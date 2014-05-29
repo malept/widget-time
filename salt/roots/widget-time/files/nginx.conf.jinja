@@ -1,0 +1,36 @@
+{% extends 'nginx/templates/config.site.jinja' %}
+{% set pget = salt['pillar.get'] -%}
+
+{% block port %}[::]:80{% endblock %}
+
+{# Path for static files #}
+{% block root %}/vagrant/src/main/resources/assets{% endblock %}
+
+{% block footer %}
+    ####
+    # DropWizard
+    ####
+
+    location @dropwizard {
+        proxy_pass http://localhost:8080;
+    }
+
+    location / {
+        try_files $uri $uri/ @dropwizard;
+    }
+
+    ####
+    # Expires settings for webfonts
+    ####
+
+    location ~* \.(?:ttf|ttc|otf|eot|woff)$ {
+        # Set cache rules for webfonts.
+        #
+        # See http://wiki.nginx.org/HttpCoreModule#location
+        # And https://github.com/h5bp/server-configs/issues/85
+        # And https://github.com/h5bp/server-configs/issues/86
+        expires 1M;
+        access_log off;
+        add_header Cache-Control "public";
+    }
+{% endblock %}
