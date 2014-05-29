@@ -6,9 +6,13 @@
   <title>WidgetTime</title>
   <meta name="description" content="Widgets + Time">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/pure/0.5.0/pure-min.css">
+  <script src="https://cdn.jsdelivr.net/g/angularjs@1.2.16/(angular.js+angular-resource.min.js+angular-route.min.js)"></script>
+  <script src="widget-time.js"></script>
 </head>
 <body>
-  <p>Hello, World</p>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <section data-ng-controller="TimeController">
+    <p>It is currently: {{ datetime }}</p>
+  </section>
 </body>
 </html>
