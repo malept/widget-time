@@ -33,4 +33,9 @@ WidgetTime.factory('UnixTime', ['$resource', function ($resource) {
             $scope.datetime = date.toISOString().replace('T', ' ').slice(0, 19);
         });
     }, 1000);
+}]).config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.when('/time', {
+        controller: 'TimeController',
+        templateUrl: 'partial-time.html'
+    }).otherwise({redirectTo: '/time'});
 }]);

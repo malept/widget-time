@@ -11,8 +11,13 @@
   <script src="widget-time.js"></script>
 </head>
 <body>
-  <section data-ng-controller="TimeController">
-    <p>It is currently: {{ datetime }}</p>
-  </section>
+  <header>
+    <nav class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+        <li><a href="#/time">Time</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main data-ng-view></main>
 </body>
 </html>
