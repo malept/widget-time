@@ -1,0 +1,25 @@
+<h2>Existing Widgets</h2>
+<table class="pure-table" data-ng-if="widgets.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="widget in widgets">
+      <td>{{ widget.id }}</td>
+      <td>{{ widget.name }}</td>
+      <td>{{ widget.dateCreated | human_readable_timestamp }}</td>
+    </tr>
+  </tbody>
+</table>
+<p data-ng-if="widgets.length == 0">No widgets found.</p>
+<form class="pure-form" data-ng-submit="add(widget)">
+  <fieldset>
+    <legend>New Widget</legend>
+    <input type="text" name="name" pattern="^[^ ]{4,}$" placeholder="Name" title="Name" data-ng-model="widget.name">
+    <button type="submit" class="pure-button pure-button-primary">Add</button>
+  </fieldset>
+</form>
