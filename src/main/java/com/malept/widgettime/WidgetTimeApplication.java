@@ -6,6 +6,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 import com.malept.widgettime.resources.TimeResource;
+import com.malept.widgettime.resources.WidgetResource;
 
 public class WidgetTimeApplication extends Application<WidgetTimeConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -22,8 +23,10 @@ public class WidgetTimeApplication extends Application<WidgetTimeConfiguration> 
     public void run(WidgetTimeConfiguration configuration,
                     Environment environment) {
         final TimeResource time_resource = new TimeResource();
+        final WidgetResource widget_resource = new WidgetResource();
         environment.jersey().setUrlPattern("/api/*");
         environment.jersey().register(time_resource);
+        environment.jersey().register(widget_resource);
     }
 
 }
