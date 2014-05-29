@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Path("/api/v1/time")
+@Path("/v1/time")
 @Produces(MediaType.APPLICATION_JSON)
 public class TimeResource {
 
